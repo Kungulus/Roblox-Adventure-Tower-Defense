@@ -1,0 +1,46 @@
+local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+local location = CFrame.new(932.531799, -124.679466, -1546.58521)
+local humanoid = game.Players.LocalPlayer.Character.Humanoid
+humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+wait(0.1)
+pl.CFrame = location
+
+while true do
+local args = {
+    [1] = 3
+}
+
+game:GetService("ReplicatedStorage").Events.AddVote:FireServer(unpack(args))
+
+local args = {
+    [1] = "Hunter (lvl 1)",
+    [2] = CFrame.new(Vector3.new(218.80477905273438, 10.685758590698242, -4.236373424530029), Vector3.new(-0, -0, -1))
+}
+
+game:GetService("ReplicatedStorage").Functions.SpawnTower:InvokeServer(unpack(args))
+
+local args = {
+    [1] = true,
+    [2] = false,
+    [3] = false
+}
+
+game:GetService("ReplicatedStorage").Events.SkipEvent2:FireServer(unpack(args))
+
+local args = {
+    [1] = false,
+    [2] = true,
+    [3] = true
+}
+
+game:GetService("ReplicatedStorage").Events.SkipEvent2:FireServer(unpack(args))
+
+local args = {
+    [1] = false,
+    [2] = false,
+    [3] = true
+}
+
+game:GetService("ReplicatedStorage").Events.SkipEvent2:FireServer(unpack(args))
+wait(1)
+end
